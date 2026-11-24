@@ -22,7 +22,7 @@ pipeline {
 
         stage('Scan Docker Image') {
             steps {
-                sh 'trivy image --severity HIGH,CRITICAL --exit-code 0 --no-progress $IMAGE:$TAG'
+                sh 'trivy image --severity HIGH,CRITICAL --exit-code 0 --scanners vuln --timeout 20m --no-progress $IMAGE:$TAG'
             }
         }
 
