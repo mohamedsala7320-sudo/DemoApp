@@ -1,7 +1,7 @@
 @Library('my-shared-lib') _
 
 pipeline {
-    agent any
+    agent { label 'node-1' }
 
     environment {
         IMAGE = 'mosala7320/demoapp'
